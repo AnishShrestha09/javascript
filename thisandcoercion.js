@@ -37,23 +37,34 @@
 
 "use strict"
 
-function fun4() {
-    let name = "something"
-    let product = {
-        name: "IPhone",
+// function fun4() {
+//     let name = "something"
+//     let product = {
+//         name: "IPhone",
 
-        printName : () => {
-            console.log(this.name)
+//         printName : () => {
+//             console.log(this.name)
 
-        }
-    }
-    // console.log(this)
-    product.printName()
-
-
-}
-
-fun4()
+//         }
+//     }
+//     // console.log(this)
+//     product.printName()
 
 
+// }
 
+// fun4()
+
+
+
+let result = "hi"
+console.log(result)
+let result1= result-6
+let result2= (NaN === (result-6))
+console.log(result1=== NaN)
+console.log( Number.isNaN(result1))
+
+
+
+// false
+null , 0 ,"","Nan",false
