@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
@@ -21,12 +22,26 @@
         <div>
             <label for="password">password</label>
             <input type="text" name="password" id="password">
+            <p class="hidden" id="passwordp">password must be at least 8 characters</p>
         </div>
         <div>
             <label for="biio">biio</label>
            <textarea name="biio" id="biio" placeholder="enter your bio ..."></textarea>
         </div>
         <button id="btn" type="submit">login</button>
+
+        <div>
+            <label for="">choose country</label>
+            <select name="country" id="country">
+                <option value="usa">USA</option>
+                <option value="vrindavan">Nikunj</option>
+            </select>
+        </div>
+
+        <div>
+            <input type="checkbox" id="checkbox">
+            <label for="ok">ok</label>
+        </div>
     </form>
     <script src="index.js"></script>
 </body>
