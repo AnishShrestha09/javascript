@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-200">
+
+    <div class="max-w-md mx-auto p-5 bg-gray-200 rounded-lg">
+
+        <!-- Header -->
+        <div class="p-5 bg-indigo-500">
+            <h1>TODO LIST</h1>
+        </div>
+
+
+        <!-- Main -->
+        <div class="p-5 bg-gray-100">
+
+            <!-- Form -->
+            <form id="todo-form" class="flex gap-5">
+
+                <input
+                    type="text"
+                    id="todo_input"
+                    class="border border-black p-2 rounded-lg flex-1"
+                    placeholder="Enter task description"
+                >
+
+                <button
+                    type="submit"
+                    class="px-5 py-2 border-2 border-black bg-indigo-600 text-white rounded-lg"
+                >
+                    Add
+                </button>
+
+            </form>
+
+
+            <!-- Statistics -->
+            <div class="flex justify-between pt-4 border-b border-black">
+
+                <p>Tasks: 0</p>
+
+                <p>Completed: 0</p>
+
+            </div>
+
+
+            <!-- Todo List -->
+            <ul id="todolist">
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
