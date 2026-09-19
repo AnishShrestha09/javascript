@@ -87,26 +87,117 @@
 // })
 
 
+// topic 7 (.then goes to micro task queue)
+
+// console.log("a")
+
+// const p = new Promise(function(resolve,reject) {
+//      resolve("server down hai bhai")
+// })
+
+// p.then(function (value) {
+//     console.log("b")
+// })
+
+
+// console.log("c")
+
+
+// topic 8
+// Promise.resolve().then(function () {
+//     console.log("result")
+// })
+
+
+// topic 9 (taskqueue vs microtaskQueue)
+
+
+// setTimeout(() => {
+//     console.log("shyamashyam")
+// }, 0);
 
 
 
+// Promise.resolve().then(function () {
+//     console.log("result")
+// })
 
 
 
+// Promise.resolve().then(function () {
+//     console.log("result")
+// })
 
 
 
+// Promise.resolve().then(function () {
+//     console.log("result")
+// })
 
 
+ // topic 10 (pizza inversion control issue solve
+ 
+
+ function searchpizza(){
+    console.log("searching the pizza")
+    return new Promise(function (resolve,reject) {
+        let price = 300;
+        setTimeout(() => {
+            console.log("here is the pizza")
+            resolve(price)
+        }, 2000);
+    })
+//   return p;
+ }
 
 
+ function addtocart(price) {
+    // console.log("adding to cart")
+    return new Promise(function (resolve,reject) {
+        setTimeout(() => {
+            // console.log("adding to cart")
+            resolve(`added to cart of price ${price}`)
+        }, 3000);
+    })
+    
+ }
 
 
+ function payment(price){
+    return new Promise(function (resolve, reject) {
+        setTimeout(() => {
+            console.log("payment done")
+            resolve(` payment donw with rs ${price}`)
+        }, 4000);
+    })
+ }
+
+// searchpizza()
+// .then(function (price) {
+//     console.log(price)
+//     addtocart(price).then(function (cart) {
+//         console.log(cart)
+//         payment(price).then(function (value) {
+//             console.log(value)
+//         })
+//     })
+// })
 
 
+// topic 11 ( can be done 10 in another way also)
 
 
-
-
-
+searchpizza()
+.then(function (price) {
+    console.log(price)
+    return addtocart(price)
+})
+.then(function (price) {
+    console.log(price)
+    return payment(price)
+})
+.then(function (price) {
+    console.log(price)
+   
+})
 
