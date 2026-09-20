@@ -29,7 +29,7 @@
 
 // what if we return something
 // async function f1() {
-   
+
 //     return 12
 //     //  same as return Promise.resolve(12)
 // }
@@ -46,7 +46,7 @@
 // topic 3 (consume the promise)
 
 // async function f1() {
-   
+
 //     return 12
 //     //  same as return Promise.resolve(12)
 // }
@@ -59,7 +59,7 @@
 
 // topic 4 (using the await instead of then)
 // async function f1() {
-   
+
 //     return 12
 //     //  same as return Promise.resolve(12)
 // }
@@ -77,26 +77,97 @@
 // see which one is the first (topic 5)
 
 
-console.log("1")
+// console.log("1")
+
+// async function f1() {
+//     return "hello"
+// }
+
+// async function f2() {
+//     return "hii"
+// }
+
+// async function f3() {
+//     console.log(2)
+//     let data = await f1()
+//     console.log(3)
+
+//     let data2 = await f2()
+//     console.log(4)
+// }
+// f3()
+
+// console.log(5)
+
+
+// topic 6 (try catch )
+
+
+// async function f1() {
+//     return "hello"
+// }
+// function f2(){
+//     return Promise.reject("server down hai bhai")
+// }
+
+// async function f3(){
+//     try {
+//         let data = await f2()
+//     } catch (error) {
+//         console.log(error)
+//     }
+
+// }
+
+
+// f3()
+
+
+
+// topic 7 (project order food )
+async function searchpizza() {
+    console.log("searching the pizza")
+    return new Promise(function (resolve, reject) {
+        let price = 300;
+        setTimeout(() => {
+            console.log("here is the pizza")
+            console.log(price)
+            resolve(price)
+        }, 2000);
+    })
+    //   return p;
+}
+async function addtocart(price) {
+    // console.log("adding to cart")
+    return new Promise(function (resolve, reject) {
+        setTimeout(() => {
+            console.log("adding to cart")
+            resolve(`added to cart of price ${price}`)
+        }, 3000);
+    })
+
+}
+
+async function payment(price) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(() => {
+            console.log("payment done")
+            console.log("payment done with price ", price)
+            resolve(` payment donw with rs ${price}`)
+        }, 4000);
+    })
+}
+
 
 async function f1() {
-    return "hello"
+    try {
+        let price = await searchpizza();
+        await addtocart(price);
+        await payment(price);
+    } catch (error) {
+        console.log(error)
+    }
+
 }
 
-async function f2() {
-    return "hii"
-}
-
-async function f3() {
-    console.log(2)
-    let data = await f1()
-    console.log(3)
-
-    let data2 = await f2()
-    console.log(4)
-}
-f3()
-
-console.log(5)
-
-
+f1()
