@@ -8,7 +8,7 @@ const cancelBtn = document.querySelector("#cancel-btn")
 
 //'Go to gym', "Revision Web dev", "Take class"
 
-let todos = JSON.parse(localStorage.getItem("todos")) || [];
+let todos = JSON.parse(localStorage.getItem("todos") || [])
 
 let editTodoId = null  // flag
 todoForm.addEventListener('submit', (e) => {
@@ -47,7 +47,7 @@ todoForm.addEventListener('submit', (e) => {
         }
 
         todos.push(newTodo) // adding new todo to exisiting todos list
-        localStorage.setItem("todos" , JSON.stringify(todos))
+        localStorage.setItem("todos",todos)
 
         // todos.push({
         //     id: Date.now(),
