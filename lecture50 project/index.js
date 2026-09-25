@@ -1,0 +1,1 @@
+API = "http://www.omdbapi.com/?apikey=1d4d5cc4&"
